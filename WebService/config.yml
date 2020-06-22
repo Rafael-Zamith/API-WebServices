@@ -6,6 +6,6 @@ logging:
 database:
   driverClass: com.mysql.cj.jdbc.Driver
   user: root
-  password:
-  url: jdbc:mysql://localhost:3306/abner?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  password: 123
+  url: jdbc:mysql://dorime.mooo.com:3306/ElGoog
   validationQuery: "SELECT 1"
