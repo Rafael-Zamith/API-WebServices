@@ -1,5 +1,15 @@
 let BASE_URL = "https://localhost:8080/graph";
-
+function onFormSubmit() {
+    var formData = readForm();
+    
+}
+function readForm() {
+    var formData = {};
+    formData["id"] = document.getElementById("id").value;
+    formData["date"] = document.getElementById("date").value;
+    formData["val"] = document.getElementById("val").value;
+    return formData;
+}
 
 
 

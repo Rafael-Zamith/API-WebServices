@@ -6,6 +6,33 @@
 <body>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
-
 <script type="text/javascript" src="../site/JS/graph.js"></script>
+<table>
+    <tr>
+        <td>
+            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                <div>
+                    <label>Data</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div>
+                    <label>valor</label>
+                    <input type="number" name="val" id="val">
+                </div>
+                <div>
+                    <label>id</label>
+                    <input type="number" name="id" id="id">
+                </div>
+
+                <div class="form-action-buttons">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </td>
+
+
+
+
+
+<script type="text/javascript" src="../site/JS/crud.js"></script>
 </body>
