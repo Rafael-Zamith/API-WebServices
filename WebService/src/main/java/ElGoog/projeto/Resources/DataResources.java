@@ -28,13 +28,13 @@ public class DataResources {
     @POST
     public Response createData(Data data){
         if(data == null){
-            throw new BadRequestException("graph data missing");
+            throw new BadRequestException("Data data missing");
         }
         long id = dataDAO.insert(data);
         data = dataDAO.findById(id);
 
         if(data == null){
-            throw new WebApplicationException("Problem creating Graph");
+            throw new WebApplicationException("Problem creating Data");
         }
 
         return Response.ok(data).build();
@@ -46,20 +46,29 @@ public class DataResources {
         Data data = dataDAO.findById(id);
 
         if (data == null){
-        throw new WebApplicationException("This Data does not exist", Response.Status.NOT_FOUND);
+            throw new WebApplicationException("This Data does not exist", Response.Status.NOT_FOUND);
         }
 
         return Response.ok(data).build();
     }
 
     @DELETE
-    public Response deleteData(@PathParam("id") long id){
-        Data data = dataDAO.findById(id);
-
+    public Response deleteData(Data data){
         if (data == null){
             throw new WebApplicationException("This Data does not exist", Response.Status.NOT_FOUND);
         }
 
-        return Response.ok(dataDAO.delete(id)).build();
+        dataDAO.delete(data);
+        return Response.ok().build();
+    }
+
+    @PUT
+    public Response updateData(Data data){
+        if(data == null){
+            throw new WebApplicationException("This Data does not exist", Response.Status.NOT_FOUND);
+        }
+
+        dataDAO.updateData(data);
+        return Response.ok().build();
     }
 }
