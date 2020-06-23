@@ -1,4 +1,4 @@
-let BASE_URL = "dorime.mooo.com:3306";
+let BASE_URL = "https://localhost:8080/graph";
 
 
 
