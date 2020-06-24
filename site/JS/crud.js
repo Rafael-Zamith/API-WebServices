@@ -1,7 +1,15 @@
 let BASE_URL = "https://localhost:8080/graph";
 function onFormSubmit() {
     var formData = readForm();
-    
+    if (document.getElementById("op").value == 1) {
+        createProduct(formData);
+     }
+    if (document.getElementById("op").value == 2) {
+        updateProduct(formData);
+     }
+    if (document.getElementById("op").value == 3) {
+        deleteProduct(document.getElementById("id").value)
+     }
 }
 function readForm() {
     var formData = {};
@@ -53,6 +61,25 @@ function updateProduct(product, callback) {
 
     var xhr = new XMLHttpRequest();
     xhr.open('UPDATE', deleteURL, true);
+    xhr.responseType = 'json';
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function () {
+        var status = xhr.status;
+        if (status === 200) {
+            console.log('DEU BOM!');
+            callback(status, xhr.response);
+        } else {
+            console.log('DEU RUIM!' + status);
+        }
+    }
+    xhr.send(JSON.stringify(product));
+}
+
+function createProduct(product, callback) {
+    let deleteURL = BASE_URL + '/' + id;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('CREATE', deleteURL, true);
     xhr.responseType = 'json';
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
