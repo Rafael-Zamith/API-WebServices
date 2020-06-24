@@ -1,8 +1,9 @@
 let BASE_URL = "http://localhost:8080/graph";
 
-function alerta(x) {
-    alert(x);
+function alerta() {
+    location.reload();
 }
+
 function onFormSubmit() {
     class Data {
         constructor() {
@@ -12,20 +13,19 @@ function onFormSubmit() {
         }
     }
     let dat = new Data();
-
     if (document.getElementById("op").value == 1) {
         createProduct(dat, alerta);
-     }
+    }
+    
     if (document.getElementById("op").value == 2) {
         updateProduct(dat, alerta);
      }
     if (document.getElementById("op").value == 3) {
         deleteProduct(document.getElementById("id").value, alerta)
-     }
-}
-function readForm() {
+    }
     
 }
+
 
 
 
@@ -47,7 +47,7 @@ function getJSON(url, callback) {
 }
 
 function deleteProduct(id, callback) {
-    let deleteURL = BASE_URL + '/' + id;
+    let deleteURL = BASE_URL;
 
     var xhr = new XMLHttpRequest();
     xhr.open('DELETE', deleteURL, true);
@@ -65,7 +65,7 @@ function deleteProduct(id, callback) {
 }
 
 function updateProduct(product, callback) {
-    let deleteURL = BASE_URL + '/' + id;
+    let deleteURL = BASE_URL;
 
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', deleteURL, true);
@@ -84,7 +84,7 @@ function updateProduct(product, callback) {
 }
 
 function createProduct(product, callback) {
-    let deleteURL = BASE_URL + '/' + id;
+    let deleteURL = BASE_URL;
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', deleteURL, true);
