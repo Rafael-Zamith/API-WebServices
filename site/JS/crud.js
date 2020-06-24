@@ -11,12 +11,13 @@ function onFormSubmit() {
             this.value = document.getElementById("val").value;
         }
     }
+    let dat = new Data();
 
     if (document.getElementById("op").value == 1) {
-        createProduct(Data, alerta);
+        createProduct(dat, alerta);
      }
     if (document.getElementById("op").value == 2) {
-        updateProduct(Data, alerta);
+        updateProduct(dat, alerta);
      }
     if (document.getElementById("op").value == 3) {
         deleteProduct(document.getElementById("id").value, alerta)
