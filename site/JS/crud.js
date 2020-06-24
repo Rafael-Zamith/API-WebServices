@@ -1,4 +1,4 @@
-let BASE_URL = "https://localhost:8080/graph";
+let BASE_URL = "http://localhost:8080/graph";
 
 function alerta(x) {
     alert(x);
@@ -67,7 +67,7 @@ function updateProduct(product, callback) {
     let deleteURL = BASE_URL + '/' + id;
 
     var xhr = new XMLHttpRequest();
-    xhr.open('UPDATE', deleteURL, true);
+    xhr.open('PUT', deleteURL, true);
     xhr.responseType = 'json';
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
@@ -86,7 +86,7 @@ function createProduct(product, callback) {
     let deleteURL = BASE_URL + '/' + id;
 
     var xhr = new XMLHttpRequest();
-    xhr.open('CREATE', deleteURL, true);
+    xhr.open('POST', deleteURL, true);
     xhr.responseType = 'json';
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
