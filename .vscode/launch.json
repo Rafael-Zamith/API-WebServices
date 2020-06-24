@@ -6,14 +6,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
-            "request": "launch",
-            "mainClass": "${file}",
-            "args": "server D:/Documentos/GitHub/elgoog-ps2/WebService/config.yml"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch)-DataServiceApplication<WebService>",
+            "name": "DataServiceApplication<WebService",
             "request": "launch",
             "mainClass": "ElGoog.projeto.DataServiceApplication",
             "projectName": "WebService",

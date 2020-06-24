@@ -1,17 +1,19 @@
 let BASE_URL = "http://localhost:8080/graph";
 
+class Data {
+    constructor() {
+        this.id = document.getElementById("id").value;
+        this.date = document.getElementById("date").value;
+        this.value = document.getElementById("val").value;
+    }
+}
+
 function alerta() {
     location.reload();
 }
 
 function onFormSubmit() {
-    class Data {
-        constructor() {
-            this.id = document.getElementById("id").value;
-            this.date = document.getElementById("date").value;
-            this.value = document.getElementById("val").value;
-        }
-    }
+    
     let dat = new Data();
     if (document.getElementById("op").value == 1) {
         createProduct(dat, alerta);
@@ -23,7 +25,7 @@ function onFormSubmit() {
     if (document.getElementById("op").value == 3) {
         deleteProduct(document.getElementById("id").value, alerta)
     }
-    
+
 }
 
 
@@ -48,10 +50,11 @@ function getJSON(url, callback) {
 
 function deleteProduct(id, callback) {
     let deleteURL = BASE_URL;
-
+    var dat = new Data();
     var xhr = new XMLHttpRequest();
     xhr.open('DELETE', deleteURL, true);
     xhr.responseType = 'json';
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
         var status = xhr.status;
         if (status === 200) {
@@ -61,7 +64,7 @@ function deleteProduct(id, callback) {
             console.log('DEU RUIM!' + status);
         }
     }
-    xhr.send();
+    xhr.send(JSON.stringify(dat));
 }
 
 function updateProduct(product, callback) {
