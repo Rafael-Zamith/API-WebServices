@@ -58,7 +58,7 @@ public class DataResources {
             throw new WebApplicationException("This Data does not exist", Response.Status.NOT_FOUND);
         }
 
-        dataDAO.delete(data);
+        dataDAO.deleteData(data);
         return Response.ok().build();
     }
 

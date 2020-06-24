@@ -33,7 +33,7 @@ public interface DataDAO {
 
     //DELETE
     @SqlUpdate("delete from graph where id = :id")
-    void delete(@BindBean Data data);
+    void deleteData(@BindBean Data data);
 
 }
 
