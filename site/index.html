@@ -11,19 +11,20 @@
 
     <form onsubmit="event.onFormSubmit();" autocomplete="off">    <!--preventDefault(); -->
         <div>
-            <label>Data</label>
+            <label>Data: </label>
             <input type="date" name="date" id="date">
         </div>
         <div>
-            <label>valor</label>
+            <label>valor: </label>
             <input type="number" name="val" id="val">
         </div>
         <div>
-            <label>id</label>
+            <label>id: </label>
             <input type="number" name="id" id="id">
         </div>
         <div>
             <select name="op" id="op">
+                <option value="" disabled selected>Selecione o que deseja fazer</option>
                 <option value="1">Criar</option>
                 <option value="2">Atualizar</option>
                 <option value="3">Deletar</option>

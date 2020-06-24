@@ -1,6 +1,7 @@
 let BASE_URL = "https://localhost:8080/graph";
 function onFormSubmit() {
     var formData = readForm();
+
     if (document.getElementById("op").value == 1) {
         createProduct(formData);
      }
