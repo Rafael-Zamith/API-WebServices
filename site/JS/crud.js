@@ -1,23 +1,29 @@
 let BASE_URL = "https://localhost:8080/graph";
+
+function alerta(x) {
+    alert(x);
+}
 function onFormSubmit() {
-    var formData = readForm();
+    class Data {
+        constructor() {
+            this.id = document.getElementById("id").value;
+            this.date = document.getElementById("date").value;
+            this.value = document.getElementById("val").value;
+        }
+    }
 
     if (document.getElementById("op").value == 1) {
-        createProduct(formData);
+        createProduct(Data, alerta);
      }
     if (document.getElementById("op").value == 2) {
-        updateProduct(formData);
+        updateProduct(Data, alerta);
      }
     if (document.getElementById("op").value == 3) {
-        deleteProduct(document.getElementById("id").value)
+        deleteProduct(document.getElementById("id").value, alerta)
      }
 }
 function readForm() {
-    var formData = {};
-    formData["id"] = document.getElementById("id").value;
-    formData["date"] = document.getElementById("date").value;
-    formData["val"] = document.getElementById("val").value;
-    return formData;
+    
 }
 
 
