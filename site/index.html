@@ -3,26 +3,84 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
+<head>
+<style>
+    p {
+        color:  #993366;
+        font-family: "Cabin", sans-serif;
+        text-align:center;
+		font-weight: bold;
+    }
+    
+    
+#fundo {
+        
+    background: #F7CAC9;
+    text-align:center;
+	background-size: cover;
+	align-items: center;
+    position: relative;
+	
+    }
+	
+#cima {
+        
+    background: #e6ffff;
+    text-align:center;
+	background-size: cover;
+	align-items: center;
+    position: relative;
+	
+    }
+	
+	#grupo {
+
+	background: #F7CAC9;
+    text-align:center;
+	color:  #b30047;
+	background-size: cover;
+	font-size: 70px;
+	align-items: center;
+    position: relative;
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+		
+	}
+    
+</style>
+</head>
+
 <body>
 <!-- Create a div where the graph will take place -->
+	<div id="grupo">
+		El Goog
+	
+	</div>
+	<div id="cima">
 <div id="my_dataviz"></div>
+	</div>
+	<div id="fundo">
 <script type="text/javascript" src="../site/JS/graph.js"></script>
 <script type="text/javascript" src="../site/JS/crud.js"></script>
 
     <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">    <!--preventDefault(); -->
+
+      
         <div>
-            <label>Data: </label>
+			<br>
+            <label><p>Data </p></label>
             <input type="date" name="date" id="date">
         </div>
         <div>
-            <label>valor: </label>
+            <label><p>Valor </p></label>
             <input type="number" name="val" id="val">
         </div>
         <div>
-            <label>id: </label>
+            <label><p>id </p></label>
             <input type="number" name="id" id="id">
         </div>
         <div>
+			<br>
             <select name="op" id="op">
                 <option value="" disabled selected>Selecione o que deseja fazer</option>
                 <option value="1">Criar</option>
@@ -33,10 +91,13 @@
         <div class="form-action-buttons">
             <input type="submit" value="Submit">
         </div>
+	
+  
+
     </form>
 
 
-
+	</div>
 
 
 
